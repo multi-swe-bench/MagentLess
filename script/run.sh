@@ -12,12 +12,12 @@ export TARGET_ID=
 export NJ=50
 export NUM_SETS=2
 export NUM_SAMPLES_PER_SET=2
-export NUM_REPRODUCTION=4
+export NUM_REPRODUCTION=0
 export FOLDER_NAME=typescript_verified_4o
 export SWEBENCH_LANG=typescript
 export PROJECT_FILE_LOC=structure
 export DATASET=local_json
-export SPLIT=java_verified
+export SPLIT=test
 
 ./script/localization1.1.sh
 ./script/localization1.2.sh
@@ -38,4 +38,4 @@ export SPLIT=java_verified
 #./script/selection2.4.sh
 ./script/selection3.1.sh
 
-./script/evaluation.sh
+#./script/evaluation.sh
