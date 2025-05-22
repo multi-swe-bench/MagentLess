@@ -10,7 +10,7 @@ def process(raw_data):
         'repo': f'{raw["org"]}/{raw["repo"]}',
         'instance_id': raw['instance_id'],
         'base_commit': raw['base']['sha'],
-        'problem_statement': raw['resolved_issues'][0]['body'],
+        'problem_statement': raw['resolved_issues'][0]['title'] + '\n' + raw['resolved_issues'][0]['body'],
     }
     return data
 
