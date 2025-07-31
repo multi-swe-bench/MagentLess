@@ -16,8 +16,17 @@ def process(raw_data):
 
 
 def load_local_json():
-    path = Path(f'data/{LANGUAGE}_verified.jsonl')
-    lines = path.read_text().splitlines()
+    dataset = []
+    if LANGUAGE == 'javascript':
+        lang = 'js'
+    elif LANGUAGE == 'typescript':
+        lang = 'ts'
+    else:
+        lang = LANGUAGE
+    path = Path(f'data/{lang}')
+    lines = []
+    for file in path.iterdir():
+        lines.extend(file.read_text().splitlines())
     dataset = [process(x) for x in lines]
     return dataset
 

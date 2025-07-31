@@ -54,16 +54,28 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 ### Data Preparation
 
-Put multi-swe-bench jsonl data in './data', named '{language}_verified.jsonl'.
+Clone multi-swe-bench dataset into './data'
 
 ```bash
-cd Magentless
-mkdir data
-cp java_verified.jsonl data/
-...
+git lfs install
+git clone https://huggingface.co/datasets/ByteDance-Seed/Multi-SWE-bench data
 ```
 
-Modify agentless/multilang/utils.py for other data.
+The data directory looks like
+```
+data
+|---c
+|   |---facebook__zstd_dataset.jsonl
+|   |---jqlang__jq_dataset.jsonl
+|   |---...
+|---cpp
+|---go
+|---java
+|---js
+|---python
+|---rust
+|---ts
+```
 
 ### Repo cloning
 
